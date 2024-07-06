@@ -1,11 +1,7 @@
 <div align="center">
   <a href="https://github.com/Phala-Network/ai-agent-template-redpill">
-    <h1>AI Agent Contract Template with RedPill</h1>
+    <h1>AI Agent Contract Template with 'mbd</h1>
     <img height="320" src="./public/AI-Agent-Contract.jpg" />
-    <br />
-  </a>
-  <a href="https://platform.openai.com/docs/api-reference">
-    <img height="32" src="public/powered-by-openai-badge-filled-on-light.svg" />
     <br />
   </a>
   <p align="center">
@@ -31,7 +27,7 @@
   <img height="240" src="https://www.jlwranglerforums.com/forum/attachments/zoolander-gif.325299/">
 </div>
 
-The RedPill AI Agent template is a **MINIMAL** template to build an AI Agent that can be hosted on Phala Network's decentralized hosting protocol. Unlike Vercel or other FaaS, it allows you to publish your AI Agent compiled code to IPFS and hosts it on a fully decentralized FaaS cloud with the following benefits:
+The 'mbd AI Agent template is a **MINIMAL** template to build an AI Agent that can be hosted on Phala Network's decentralized hosting protocol. Unlike Vercel or other FaaS, it allows you to publish your AI Agent compiled code to IPFS and hosts it on a fully decentralized FaaS cloud with the following benefits:
 
 - 💨 Ship Fast: Build and ship with familiar toolchain in minutes
 - ⛑️ Secure: Execution guarded by rock solid TEE / Intel SGX
@@ -52,14 +48,14 @@ Create `.env` file and add your RedPill API Key
 ```shell
 cp .env.local .env
 ```
-Get an OpenAI API Key from Redpill
-> Go to https://red-pill.ai/dashboard and claim your OpenAI API Key by swapping some ETH for wGPT at https://app.uniswap.org/explore/tokens/base/0x74F62Bc1961028C22b8080961c6534f4eDD49D6C
+Get an 'mbd Key from https://console.mbd.xyz/dashboard
+> Go to https://console.mbd.xyz/dashboard and claim your 'mbd API Key
 >
 > Video: https://youtu.be/ZoJwbLNhbWE
 
-In `.env` file replace `YOUR_OPENAI_KEY` with your API Key
+In `.env` file replace `YOUR_MBD_KEY` with your API Key
 ```text
-OPENAI_API_KEY="YOUR_OPENAI_KEY"
+MBD_API_KEY="YOUR_MBD_KEY"
 ```
 
 Build your Agent
@@ -74,7 +70,7 @@ npm run test
 
 Expected Test Results
 ```shell
-INPUT: {"method":"GET","path":"/ipfs/QmVHbLYhhYA5z6yKpQr4JWr3D54EhbSsh7e7BFAAyrkkMf","queries":{"chatQuery":["Who are you?"]},"secret":{"openaiApiKey":"YOUR_OPENAI_KEY"},"headers":{}}
+INPUT: {"method":"GET","path":"/ipfs/QmVHbLYhhYA5z6yKpQr4JWr3D54EhbSsh7e7BFAAyrkkMf","queries":{"chatQuery":["Who are you?"]},"secret":{"mbdApiKey":"YOUR_MBD_KEY"},"headers":{}}
 GET RESULT: {
   status: 200,
   body: '\n' +
@@ -97,7 +93,7 @@ GET RESULT: {
 }
 
 
-INPUT: {"method":"POST","path":"/ipfs/QmVHbLYhhYA5z6yKpQr4JWr3D54EhbSsh7e7BFAAyrkkMf","queries":{"chatQuery":["When did humans land on the moon?"]},"secret":{"openaiApiKey":"YOUR_OPENAI_KEY"},"headers":{},"body":"{\"untrustedData\":{\"fid\":2,\"url\":\"https://fcpolls.com/polls/1\",\"messageHash\":\"0xd2b1ddc6c88e865a33cb1a565e0058d757042974\",\"timestamp\":1706243218,\"network\":1,\"buttonIndex\":2,\"castId\":{\"fid\":226,\"hash\":\"0xa48dd46161d8e57725f5e26e34ec19c13ff7f3b9\"}},\"trustedData\":{\"messageBytes\":\"d2b1ddc6c88e865a33cb1a565e0058d757042974...\"}}"}
+INPUT: {"method":"POST","path":"/ipfs/QmVHbLYhhYA5z6yKpQr4JWr3D54EhbSsh7e7BFAAyrkkMf","queries":{"chatQuery":["When did humans land on the moon?"]},"secret":{"mbdApiKey":"YOUR_MBD_KEY"},"headers":{},"body":"{\"untrustedData\":{\"fid\":2,\"url\":\"https://fcpolls.com/polls/1\",\"messageHash\":\"0xd2b1ddc6c88e865a33cb1a565e0058d757042974\",\"timestamp\":1706243218,\"network\":1,\"buttonIndex\":2,\"castId\":{\"fid\":226,\"hash\":\"0xa48dd46161d8e57725f5e26e34ec19c13ff7f3b9\"}},\"trustedData\":{\"messageBytes\":\"d2b1ddc6c88e865a33cb1a565e0058d757042974...\"}}"}
 POST RESULT: {
   status: 200,
   body: 'Not Implemented',
@@ -112,7 +108,7 @@ To test in the SideVM playground go to https://phat.phala.network/contracts/view
 Connect you polkadot.js account and select 'run_js' with the parameters:
 - engine: SidevmQuickJSWithPolyfill
 - js_code: Source code text of dist/index.ts
-- args: {"method":"GET","path":"/ipfs/QmVHbLYhhYA5z6yKpQr4JWr3D54EhbSsh7e7BFAAyrkkMf","queries":{"chatQuery":["Who are you?"],"openAiModel":["gpt-4o"]},"secret":{"openaiApiKey":"OPENAI_API_KEY"},"headers":{}}
+- args: {"method":"GET","path":"/ipfs/QmVHbLYhhYA5z6yKpQr4JWr3D54EhbSsh7e7BFAAyrkkMf","queries":{"chatQuery":["Who are you?"],"openAiModel":["gpt-4o"]},"secret":{"mbdApiKey":"MBD_API_KEY"},"headers":{}}
 Watch video here for to see the visual steps of testing in Sidevm playground: https://www.youtube.com/watch?v=fNqNeLfFFME
 
 Make sure to replace queries and secret with your values compatible with your AI Agent Contract.
@@ -154,7 +150,7 @@ AI Agent Contract deployed at: https://agents.phala.network/ipfs/QmcpWsiZq8RP7C8
 Make sure to add your secrets to ensure your AI-Agent works properly. Use syntax:
 
 
-curl https://agents.phala.network/vaults -H 'Content-Type: application/json' -d '{"cid": "QmcpWsiZq8RP7C823HdXT9EAhg9XUtuZ7FA6a1mHkNbRVQ", "data": {"openaiApiKey": "OPENAI_API_KEY"}}'
+curl https://agents.phala.network/vaults -H 'Content-Type: application/json' -d '{"cid": "QmcpWsiZq8RP7C823HdXT9EAhg9XUtuZ7FA6a1mHkNbRVQ", "data": {"mbdApiKey": "MBD_API_KEY"}}'
 ```
 
 <details>
@@ -188,28 +184,28 @@ By default, all the compiled JS code is visible for anyone to view if they look 
 <details>
 <summary><b>How to Add Secrets</b></summary>
 
-The steps to add a `secret` is simple. We will add the [OpenAI](https://platform.openai.com/docs/quickstart?context=node) API Key in this example by creating a secret JSON object with the `openaiApiKey`:
+The steps to add a `secret` is simple. We will add the ['mbd API Key](https://platform.mbd.com/docs/quickstart?context=node) API Key in this example by creating a secret JSON object with the `mbdApiKey`:
 
 ```json
-{"openaiApiKey": "<OPENAI_API_KEY>"}
+{"mbdApiKey": "<MBD_API_KEY>"}
 ```
 
 Then in your frame code, you will be able to access the secret key via `req.secret` object:
 
 ```js
 async function GET(req: Request): Promise<Response> {
-    const apiKey = req.secret?.openaiApiKey
+    const apiKey = req.secret?.mbdApiKey
 }
 ```
 
 > **Note**: Before continuing, make sure to publish your compiled AI Agent JS code, so you can add secrets to the CID.
 
 **Open terminal**
-Use `curl` to `POST` your secrets to `https://agents.phala.network/vaults`. Replace `IPFS_CID` with the CID to the compile JS code in IPFS, and replace `<OPENAI_API_KEY>` with your OpenAI API key. Note that you can name the secret field name something other than `openaiApiKey`, but you will need to access the key in your `index.ts` file with the syntax `req.secret?.<your-secret-field-name> as string`
+Use `curl` to `POST` your secrets to `https://agents.phala.network/vaults`. Replace `IPFS_CID` with the CID to the compile JS code in IPFS, and replace `<MBD_API_KEY>` with your MBD API key. Note that you can name the secret field name something other than `mbdApiKey`, but you will need to access the key in your `index.ts` file with the syntax `req.secret?.<your-secret-field-name> as string`
 
 The command will look like this:
 ```shell
-curl https://agents.phala.network/vaults -H 'Content-Type: application/json' -d '{"cid": "IPFS_CID", "data": {"openaiApiKey": "<OPENAI_API_KEY>"}}'
+curl https://agents.phala.network/vaults -H 'Content-Type: application/json' -d '{"cid": "IPFS_CID", "data": {"mbdApiKey": "<MBD_API_KEY>"}}'
 # Output:
 # {"token":"e85ae53d2ba4ca8d","key":"e781ef31210e0362","succeed":true}
 ```
@@ -223,7 +219,7 @@ curl https://agents.phala.network/vaults/<key>/<token>
 
 Expected output:
 ```shell
-{"data":{"openaiApiKey":"<OPENAI_API_KEY>"},"succeed":true}
+{"data":{"mbdApiKey":"<MBD_API_KEY>"},"succeed":true}
 ```
 
 If you are using secrets, make sure that your URL is set in the following syntax where `cid` is the IPFS CID of your compiled JS file and `key` is the `key` from adding secrets to your vault.

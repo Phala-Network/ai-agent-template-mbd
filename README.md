@@ -46,7 +46,7 @@ npm install
 ### Testing Locally
 Create `.env` file and add your RedPill API Key
 ```shell
-cp .env.local .env
+cp .env.example .env
 ```
 Get an 'mbd Key from https://console.mbd.xyz/dashboard
 > Go to https://console.mbd.xyz/dashboard and claim your 'mbd API Key

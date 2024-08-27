@@ -20,7 +20,7 @@ async function test() {
 
     const postResult = await execute({
         method: 'POST',
-        path: '/ipfs/QmVHbLYhhYA5z6yKpQr4JWr3D54EhbSsh7e7BFAAyrkkMf',
+        path: '/ipfs/CID',
         queries: {},
         secret: { mbdApiKey: process.env.MBD_API_KEY },
         headers: {},
@@ -28,18 +28,8 @@ async function test() {
     })
     console.log('POST RESULT:', JSON.parse(postResult))
 
-    const testArgsString = JSON.stringify({
-        method: 'POST',
-        path: '/ipfs/QmVHbLYhhYA5z6yKpQr4JWr3D54EhbSsh7e7BFAAyrkkMf',
-        queries: {},
-        secret: { mbdApiKey: "MBD_API_KEY" },
-        headers: {},
-        body: JSON.stringify(sampleInput)
-    })
-    console.log(`\nTo test in the SideVM playground go to https://phat.phala.network/contracts/view/0xf0a398600f02ea9b47a86c59aed61387e450e2a99cb8b921cd1d46f734e45409\n\nConnect you polkadot.js account and select 'run_js' with the parameters:\n- engine: SidevmQuickJSWithPolyfill\n- js_code: Source code text of dist/index.ts\n- args: ${testArgsString}`);
-    console.log('Watch video here for to see the visual steps of testing in Sidevm playground: https://www.youtube.com/watch?v=fNqNeLfFFME');
-    console.log(`\nMake sure to replace queries and secret with your values compatible with your AI Agent Contract.`);
-
+    console.log(`**NOTE**:\nThis is a local test and your published code could have a different result when executing in the TEE on Phala Network.`)
+    console.log(`\nPlease reach out to the team here if your run into issues: https://discord.gg/phala-network`)
 }
 
 test().then(() => { }).catch(err => console.error(err)).finally(() => process.exit())

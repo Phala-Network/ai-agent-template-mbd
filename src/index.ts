@@ -1,18 +1,15 @@
 import { Request, Response, route } from './httpSupport'
 
 async function GET(req: Request): Promise<Response> {
-    return new Response('Only POST Implemented')
+    return new Response('GET Not Implemented')
 }
 
 async function POST(req: Request): Promise<Response> {
-    const secret = req.queries?.key;
-    // if (!secret) {
-    //     const result = {error: 'Error: MISSING VAULT KEY!'}
-    //     return new Response(JSON.stringify(result))
-    // }
-    const mbdApiKey = req.secret?.mbdApiKey as string;
-    const body = await req.json();
-    let result;
+    const secrets = req.secret || {}
+    const queries = req.queries
+    const mbdApiKey = (secrets.mbdApiKey) ? secrets.mbdApiKey as string : ''
+    const body = await req.json()
+    let result = { body: '' }
 
     try {
         const response = await fetch('https://api.mbd.xyz/v1/farcaster/casts/feed/for-you', {
@@ -24,14 +21,14 @@ async function POST(req: Request): Promise<Response> {
             },
             body: JSON.stringify(body)
         });
-        result = await response.json();
+        const responseData = await response.json();
+        result.body = responseData.body
     } catch (error) {
         console.error('Error fetching chat completion:', error);
-        result = {error};
+        result.body = error as string;
     }
 
-    console.log(JSON.stringify(result.body));
-    return new Response(result);
+    return new Response(JSON.stringify(result))
 }
 
 export default async function main(request: string) {

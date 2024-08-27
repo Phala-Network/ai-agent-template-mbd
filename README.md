@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/Phala-Network/ai-agent-template-redpill">
+  <a href="https://github.com/Phala-Network/ai-agent-template-mbd">
     <h1>AI Agent Contract Template with 'mbd</h1>
     <img height="320" src="./public/AI-Agent-Contract.jpg" />
     <br />
@@ -7,14 +7,14 @@
   <p align="center">
     Host your AI Agent Contract on Phala's decentralized serverless cloud.
     <br />
-    <a href="https://github.com/Phala-Network/ai-agent-template-redpill"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Phala-Network/ai-agent-template-mbd"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="QmQu9AmBL13tyGpxgg5ASt96WQ669p63rnJRWiAo9st8ns/0?key=c0c0105ba56276cd&chatQuery=When%20did%20humans%20land%20on%20the%20moon">View Demo</a>
     ·
-    <a href="https://github.com/Phala-Network/ai-agent-template-redpill/issues">Report Bug</a>
+    <a href="https://github.com/Phala-Network/ai-agent-template-mbd/issues">Report Bug</a>
     ·
-    <a href="https://discord.gg/DXGGJajW">Discord</a>
+    <a href="https://discord.gg/phala-network">Discord</a>
   </p>
 
   <h3>Architecure Overview</h3>
@@ -70,48 +70,19 @@ npm run test
 
 Expected Test Results
 ```shell
-INPUT: {"method":"GET","path":"/ipfs/QmVHbLYhhYA5z6yKpQr4JWr3D54EhbSsh7e7BFAAyrkkMf","queries":{"chatQuery":["Who are you?"]},"secret":{"mbdApiKey":"YOUR_MBD_KEY"},"headers":{}}
-GET RESULT: {
-  status: 200,
-  body: '\n' +
-    '    <!DOCTYPE html>\n' +
-    '    <html lang="en">\n' +
-    '        <head>\n' +
-    '            <meta charset="utf-8" />\n' +
-    '            <title>TestUI</title>\n' +
-    '        </head>\n' +
-    '        <body>\n' +
-    '            <div align="center">\n' +
-    '                <p>I am an AI-powered digital assistant here to help answer your questions and assist you with various tasks. How can I assist you today?</p>\n' +
-    '            </div>\n' +
-    '        </body>\n' +
-    '    </html>',
-  headers: {
-    'Content-Type': 'text/html; charset=UTF-8',
-    'Access-Control-Allow-Origin': '*'
-  }
-}
-
-
-INPUT: {"method":"POST","path":"/ipfs/QmVHbLYhhYA5z6yKpQr4JWr3D54EhbSsh7e7BFAAyrkkMf","queries":{"chatQuery":["When did humans land on the moon?"]},"secret":{"mbdApiKey":"YOUR_MBD_KEY"},"headers":{},"body":"{\"untrustedData\":{\"fid\":2,\"url\":\"https://fcpolls.com/polls/1\",\"messageHash\":\"0xd2b1ddc6c88e865a33cb1a565e0058d757042974\",\"timestamp\":1706243218,\"network\":1,\"buttonIndex\":2,\"castId\":{\"fid\":226,\"hash\":\"0xa48dd46161d8e57725f5e26e34ec19c13ff7f3b9\"}},\"trustedData\":{\"messageBytes\":\"d2b1ddc6c88e865a33cb1a565e0058d757042974...\"}}"}
+INPUT: {"method":"POST","path":"/ipfs/CID","queries":{},"secret":{"mbdApiKey":"mbd-7abc882c5c21647894fdcf0158ada934c9f8116db673759c5659614959005eb2"},"headers":{},"body":"{\"scoring\":\"like\",\"user_id\":\"12470\",\"top_k\":25,\"return_ai_labels\":true,\"return_metadata\":false}"}
 POST RESULT: {
   status: 200,
-  body: 'Not Implemented',
+  body: '{"body":[{"score":0.0007551,"labels":{"topics":["diaries_daily_life"],"sentiment":["positive"],"emotion":["joy","optimism"],"moderation":[]},"item_id":"0x83d7cd9ed67ee2e3ba4bd4dc5d73c142d15f473a"},{"score":0.0004989,"labels":{"topics":["business_entrepreneurs"],"sentiment":["negative"],"emotion":["joy"],"moderation":[]},"item_id":"0x46c3dd863f80e96e8d4a4132db425f79a4b64c77"},{"score":0.0004544,"labels":{"topics":["diaries_daily_life"],"sentiment":["positive"],"emotion":["joy","love","optimism"],"moderation":[]},"item_id":"0xc6a17393cf77e51f31eb1081a6a939cf9f95fe55"},{"score":0.0004505,"labels":{"topics":["food_dining"],"sentiment":["neutral"],"emotion":[],"moderation":[]},"item_id":"0xd85e34c8878105471e4e2f30a87088bbc3cb6059"},{"score":0.0004446,"labels":{"topics":["food_dining"],"sentiment":["positive"],"emotion":["joy"],"moderation":[]},"item_id":"0x7c9e8acb91e5f2f3f875c5cf4998801b01d5d1ac"},{"score":0.0003669,"labels":{"topics":["business_entrepreneurs","science_technology"],"sentiment":["positive"],"emotion":["joy","optimism"],"moderation":[]},"item_id":"0x3b38c9e59b3d316a1777d803070d88f36a1bfc51"},{"score":0.0003238,"labels":{"topics":["food_dining"],"sentiment":["positive"],"emotion":["joy","optimism"],"moderation":[]},"item_id":"0x9bf31fe5de25f423663db306820ef13e0584ad76"},{"score":0.0003202,"labels":{"topics":["business_entrepreneurs"],"sentiment":["neutral"],"emotion":[],"moderation":[]},"item_id":"0xb960ac130806814dc643b6528d7ab7244fde16b3"},{"score":0.0003061,"labels":{"topics":["food_dining"],"sentiment":["positive"],"emotion":["joy","optimism"],"moderation":[]},"item_id":"0x9e123b8a13918529c59c838affd8a0f4163e1233"},{"score":0.0003017,"labels":{"topics":[],"sentiment":["neutral"],"emotion":[],"moderation":[]},"item_id":"0x97906c211fa5f48d4377ddc1e2b5547e428b4c8e"},{"score":0.0002771,"labels":{"topics":[],"sentiment":["neutral"],"emotion":[],"moderation":[]},"item_id":"0x5581cfca4704754735962c72c01d4e768b9ba0c4"},{"score":0.0002708,"labels":{"topics":["sports"],"sentiment":["neutral"],"emotion":["optimism"],"moderation":[]},"item_id":"0x5b8a48d7c62eece2b08fb802f774f6484652cbd9"},{"score":0.0002556,"labels":{"topics":["business_entrepreneurs"],"sentiment":["positive"],"emotion":["anticipation","joy","optimism"],"moderation":[]},"item_id":"0x83dd9be074a55dfa186660085cae8e793e9d38cb"},{"score":0.0002548,"labels":{"topics":["fitness_health"],"sentiment":["positive"],"emotion":["optimism"],"moderation":[]},"item_id":"0x919add6dff1be577d0174155325ee173af58c64f"},{"score":0.0002489,"labels":{"topics":["food_dining"],"sentiment":["neutral"],"emotion":[],"moderation":[]},"item_id":"0xcc31a87c6bb481fb24b8572c1ff7cb7337792e64"},{"score":0.0002356,"labels":{"topics":["other_hobbies"],"sentiment":["positive"],"emotion":["joy","optimism"],"moderation":[]},"item_id":"0x8c4d6aedefc19a6faf9136198b091384bfdff682"},{"score":0.0002327,"labels":{"topics":["fitness_health"],"sentiment":["neutral"],"emotion":["joy"],"moderation":[]},"item_id":"0x102df553577d4b41126a0b35f2b0be9cb6d6bf31"},{"score":0.0002179,"labels":{"topics":["business_entrepreneurs"],"sentiment":["neutral"],"emotion":["anticipation"],"moderation":[]},"item_id":"0x0349c5fe7783eda17d73d6cb9d144970bb9c5368"},{"score":0.000215,"labels":{"topics":["sports"],"sentiment":["positive"],"emotion":["joy","optimism"],"moderation":[]},"item_id":"0x6fbfa668ca16a8717051762b1c5536068f6f0316"},{"score":0.000213,"labels":{"topics":["travel_adventure"],"sentiment":["positive"],"emotion":["joy","optimism"],"moderation":[]},"item_id":"0x513014dafb2df1097308620aa79430b98a924962"},{"score":0.0002117,"labels":{"topics":["diaries_daily_life","travel_adventure"],"sentiment":["neutral"],"emotion":["joy","optimism"],"moderation":[]},"item_id":"0x49aa4deb035cfb154db60a7c8a7fb28bec9fa398"},{"score":0.0002096,"labels":{"topics":["food_dining"],"sentiment":["positive"],"emotion":["joy","optimism"],"moderation":[]},"item_id":"0xff0745fbe03d3dc80a96b54a057c5198c2b03dfd"},{"score":0.000209,"labels":{"topics":["diaries_daily_life","fitness_health"],"sentiment":["positive"],"emotion":["joy","optimism"],"moderation":[]},"item_id":"0xea4e1c9f4cabddbee3a1d4970278db6e335a0e55"},{"score":0.0002025,"labels":{"topics":["sports"],"sentiment":["positive"],"emotion":["joy","optimism"],"moderation":[]},"item_id":"0xb125b56924cdf7f540a1dec556ed641baecc8a23"},{"score":0.0002013,"labels":{"topics":["arts_culture"],"sentiment":["neutral"],"emotion":["joy","optimism"],"moderation":[]},"item_id":"0xcf673cbe97a99f745901bfcd52d9ab6a116e3b7c"}]}',
   headers: {
-    'Content-Type': 'text/html; charset=UTF-8',
+    'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*'
   }
 }
+**NOTE**:
+This is a local test and your published code could have a different result when executing in the TEE on Phala Network.
 
-To test in the SideVM playground go to https://phat.phala.network/contracts/view/0xf0a398600f02ea9b47a86c59aed61387e450e2a99cb8b921cd1d46f734e45409
-
-Connect you polkadot.js account and select 'run_js' with the parameters:
-- engine: SidevmQuickJSWithPolyfill
-- js_code: Source code text of dist/index.ts
-- args: {"method":"GET","path":"/ipfs/QmVHbLYhhYA5z6yKpQr4JWr3D54EhbSsh7e7BFAAyrkkMf","queries":{"chatQuery":["Who are you?"],"openAiModel":["gpt-4o"]},"secret":{"mbdApiKey":"MBD_API_KEY"},"headers":{}}
-Watch video here for to see the visual steps of testing in Sidevm playground: https://www.youtube.com/watch?v=fNqNeLfFFME
-
-Make sure to replace queries and secret with your values compatible with your AI Agent Contract.
+Please reach out to the team here if your run into issues: https://discord.gg/phala-network
 ```
 
 ### Publish Your AI Agent
@@ -124,7 +95,7 @@ npm run publish-agent
 Upon a successful upload, the command should show the URL to access your AI Agent.
 ```shell
 ✓ Compiled successfully.
-  1.91 KB  dist/index.js
+  1.36 KB  dist/index.js
 Running command: npx thirdweb upload dist/index.js
 This may require you to log into thirdweb and will take some time to publish to IPFS...
 
@@ -142,15 +113,14 @@ This may require you to log into thirdweb and will take some time to publish to 
 - Uploading file to IPFS. This may take a while depending on file sizes.
 
 ✔ Successfully uploaded file to IPFS.
-✔ Files stored at the following IPFS URI: ipfs://QmcpWsiZq8RP7C823HdXT9EAhg9XUtuZ7FA6a1mHkNbRVQ
-✔ Open this link to view your upload: https://bafybeigxe4cxpg2nz4ueoiu6edkyttvj3gjkvoht4szl7kktjxftkzcxj4.ipfs.cf-ipfs.com/
+✔ Files stored at the following IPFS URI: ipfs://QmUG4mpRuqPAgWdAnv1mFWDXfnUfumiR7Xp76EqgLJr5VA
+✔ Open this link to view your upload: https://b805a9b72767504353244e0422c2b5f9.ipfscdn.io/ipfs/bafybeicx7fwuavddpc3ihi5kb5mjg4glwz4vxwuf5fk7cpntjqf2k32aje/
 
-AI Agent Contract deployed at: https://agents.phala.network/ipfs/QmcpWsiZq8RP7C823HdXT9EAhg9XUtuZ7FA6a1mHkNbRVQ
+Agent Contract deployed at: https://wapo-testnet.phala.network/ipfs/QmUG4mpRuqPAgWdAnv1mFWDXfnUfumiR7Xp76EqgLJr5VA
 
-Make sure to add your secrets to ensure your AI-Agent works properly. Use syntax:
-
-
-curl https://agents.phala.network/vaults -H 'Content-Type: application/json' -d '{"cid": "QmcpWsiZq8RP7C823HdXT9EAhg9XUtuZ7FA6a1mHkNbRVQ", "data": {"mbdApiKey": "MBD_API_KEY"}}'
+If your agent requires secrets, ensure to do the following:
+1) Edit the setSecrets.ts file to add your secrets
+2) Set the variable AGENT_CID=QmUG4mpRuqPAgWdAnv1mFWDXfnUfumiR7Xp76EqgLJr5VA in the .env file
 ```
 
 <details>
@@ -160,61 +130,58 @@ We use <a href="https://thirdweb.com/dashboard/infrastructure/storage">thirdweb 
 
 <details>
 <summary>Did thirdweb fail to publish?</summary>
-If thirdweb takes too long to install or fails to publish, use the following command:
-
-```shell
-curl -F file=@./dist/index.js https://agents.phala.network/ipfs 
-```
+If ThirdWeb fails to publish, please use any IPFS pinning service to publish your Agent Contract.
 </details>
 
 ### Access the Published AI Agent
 
-Once published, your AI Agent is available at the URL: `https://agents.phala.network/ipfs/<your-cid>`. You can get it from the "Publish to IPFS" step.
+Once published, your AI Agent is available at the URL: `https://wapo-testnet.phala.network/ipfs/<your-cid>`. You can get it from the "Publish to IPFS" step.
 
 You can test it with `curl`.
 
 ```bash
-curl https://agents.phala.network/ipfs/<your-cid>
+curl https://wapo-testnet.phala.network/ipfs/<your-cid>
 ```
 
 ### Add Secrets
 
 By default, all the compiled JS code is visible for anyone to view if they look at IPFS CID. This makes private info like API keys, signer keys, etc. vulnerable to be stolen. To protect devs from leaking keys, we have added a field called `secret` in the `Request` object. It allows you to store secrets in a vault for your AI Agent to access.
 
-<details>
-<summary><b>How to Add Secrets</b></summary>
-
-The steps to add a `secret` is simple. We will add the ['mbd API Key](https://platform.mbd.com/docs/quickstart?context=node) API Key in this example by creating a secret JSON object with the `mbdApiKey`:
-
-```json
-{"mbdApiKey": "<MBD_API_KEY>"}
+To add your secrets,
+1) edit the [setSecrets.ts](./scripts/setSecrets.ts) file and update the `secrets` variable at the top of the file
+```typescript
+// Update your key value JSON object here for your secrets
+const secrets = JSON.stringify({
+  // Add your secrets here
+  // key: value
+  mbdApiKey: process.env.MBD_API_KEY
+})
 ```
-
-Then in your frame code, you will be able to access the secret key via `req.secret` object:
-
-```js
-async function GET(req: Request): Promise<Response> {
-    const apiKey = req.secret?.mbdApiKey
-}
+2) Update the [.env](./.env.example) file with your published agent IPFS CID
+```text
+AGENT_CID=QmUG4mpRuqPAgWdAnv1mFWDXfnUfumiR7Xp76EqgLJr5VA
 ```
-
-> **Note**: Before continuing, make sure to publish your compiled AI Agent JS code, so you can add secrets to the CID.
-
-**Open terminal**
-Use `curl` to `POST` your secrets to `https://agents.phala.network/vaults`. Replace `IPFS_CID` with the CID to the compile JS code in IPFS, and replace `<MBD_API_KEY>` with your MBD API key. Note that you can name the secret field name something other than `mbdApiKey`, but you will need to access the key in your `index.ts` file with the syntax `req.secret?.<your-secret-field-name> as string`
-
-The command will look like this:
+3) Run command to set the secrets
 ```shell
-curl https://agents.phala.network/vaults -H 'Content-Type: application/json' -d '{"cid": "IPFS_CID", "data": {"mbdApiKey": "<MBD_API_KEY>"}}'
-# Output:
-# {"token":"e85ae53d2ba4ca8d","key":"e781ef31210e0362","succeed":true}
+npm run set-secrets
+```
+Expected output:
+```shell
+Storing secrets...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   219    0    68  100   151     99    220 --:--:-- --:--:-- --:--:--   319
+{"token":"1e4d12a87503081d","key":"680665645b9f4e90","succeed":true}
+
+Secrets set successfully. Go to the URL below to interact with your agent:
+https://wapo-testnet.phala.network/ipfs/QmUG4mpRuqPAgWdAnv1mFWDXfnUfumiR7Xp76EqgLJr5VA?key=680665645b9f4e90
 ```
 
 The API returns a `token` and a `key`. The `key` is the id of your secret. It can be used to specify which secret you are going to pass to your frame. The `token` can be used by the developer to access the raw secret. You should never leak the `token`.
 
 To verify the secret, run the following command where `key` and `token` are replaced with the values from adding your `secret` to the vault.
 ```shell
-curl https://agents.phala.network/vaults/<key>/<token>
+curl https://wapo-testnet.phala.network/vaults/<key>/<token>
 ```
 
 Expected output:
@@ -222,22 +189,12 @@ Expected output:
 {"data":{"mbdApiKey":"<MBD_API_KEY>"},"succeed":true}
 ```
 
-If you are using secrets, make sure that your URL is set in the following syntax where `cid` is the IPFS CID of your compiled JS file and `key` is the `key` from adding secrets to your vault.
-```text
-https://agents.phala.network/ipfs/<cid>?key=<key>
-```
-
-Example:
-https://agents.phala.network/ipfs/Qma2WjqWqW8wYG2tEQ9YFUgyVrMDA9VzvkkdeFny7Smn3R/0?key=686df81d326fa5f2&chatQuery=When%20did%20humans%20land%20on%20the%20moon
-
-</details>
-
 ### Access Queries
 To help create custom logic, we have an array variable named `queries` that can be accessed in the `Request` class. To access the `queries` array variable `chatQuery` value at index `0`, the syntax will look as follows:
 ```typescript
 const query = req.queries.chatQuery[0] as string;
 ```
-The example at https://agents.phala.network/ipfs/Qma2WjqWqW8wYG2tEQ9YFUgyVrMDA9VzvkkdeFny7Smn3R/0?key=686df81d326fa5f2&chatQuery=When%20did%20humans%20land%20on%20the%20moon will have a value of `When did humans land on the moon`. `queries` can have any field name, so `chatQuery` is just an example of a field name and not a mandatory name, but remember to update your `index.ts` file logic to use your expected field name.
+The example at https://wapo-testnet.phala.network/ipfs/QmcQbQzJop8m9uqGJTRmxVCEPoWtzx6NkNJRA12CZ6vFyT?key=b7fd2b6c4bf008cc&chatQuery=When%20did%20humans%20land%20on%20the%20moon will have a value of `When did humans land on the moon`. `queries` can have any field name, so `chatQuery` is just an example of a field name and not a mandatory name, but remember to update your `index.ts` file logic to use your expected field name.
 
 
 ## FAQ
@@ -248,8 +205,7 @@ The example at https://agents.phala.network/ipfs/Qma2WjqWqW8wYG2tEQ9YFUgyVrMDA9V
   <li>Most of the npm packages are supported: viem, onchainkit, ….</li>
   <li>Some packages with some advanced features are not supported:</li>
   <ul>
-    <li>Large code size. Compiled bundle should be less than 500kb.</li>
-    <li>Large memory usage, like image generation</li>
+    <li>Memory usage over 100MB</li>
     <li>Web Assembly</li>
     <li>Browser only features: local storage, service workers, etc</li>
   </ul>
@@ -261,13 +217,7 @@ The example at https://agents.phala.network/ipfs/Qma2WjqWqW8wYG2tEQ9YFUgyVrMDA9V
 <ul>
   <li>The code runs inside a tailored <a href="https://bellard.org/quickjs/">QuickJS engine</a></li>
   <li>Available features: ES2023, async, fetch, setTimeout, setInterval, bigint</li>
-  <li>Resource limits</li>
-  <ul>
-    <li>Max execution time ~30s</li>
-    <li>Max memory usage: 16 mb</li>
-    <li>Max code size: 500 kb</li>
-    <li>Limited CPU burst: CPU time between async calls is limited. e.g. Too complex for-loop may hit the burst limit.</li>
-  </ul>
+  <li> <a href="https://docs.phala.network/tech-specs/ai-agent-contract#wapojs/">Tech spec doc</a></li>
 </ul>
 </details>
 

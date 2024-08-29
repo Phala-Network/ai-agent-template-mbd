@@ -1,11 +1,6 @@
-import main from './index'
 import 'dotenv/config'
-
-async function execute(inputObj: any) {
-    const inputJson = JSON.stringify(inputObj)
-    console.log('INPUT:', inputJson)
-    return await main(inputJson)
-}
+import './testSupport'
+import {execute} from "./testSupport";
 
 // Sample body input for a POST request
 const sampleInput = {
@@ -17,19 +12,17 @@ const sampleInput = {
 }
 
 async function test() {
-
     const postResult = await execute({
         method: 'POST',
         path: '/ipfs/CID',
         queries: {},
-        secret: { mbdApiKey: process.env.MBD_API_KEY },
+        secret: { mbdApiKey: 'MBD_API_KEY' },
         headers: {},
         body: JSON.stringify(sampleInput)
     })
     console.log('POST RESULT:', JSON.parse(postResult))
 
-    console.log(`**NOTE**:\nThis is a local test and your published code could have a different result when executing in the TEE on Phala Network.`)
-    console.log(`\nPlease reach out to the team here if your run into issues: https://discord.gg/phala-network`)
+    console.log(`Now you are ready to publish your agent, add secrets, and interact with your agent in the following steps:\n- Execute: 'npm run publish-agent'\n- Set secrets: 'npm run set-secrets'\n- Go to the url produced by setting the secrets (e.g. https://wapo-testnet.phala.network/ipfs/QmPQJD5zv3cYDRM25uGAVjLvXGNyQf9Vonz7rqkQB52Jae?key=b092532592cbd0cf)`)
 }
 
 test().then(() => { }).catch(err => console.error(err)).finally(() => process.exit())
